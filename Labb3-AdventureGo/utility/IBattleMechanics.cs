@@ -1,6 +1,6 @@
 ﻿namespace Labb3_AdventureGo.utility
 {
-    internal interface IBattleMechanics
+    interface IBattleMechanics
     {
         int Attack();
 

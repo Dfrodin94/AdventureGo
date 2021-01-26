@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Labb3_AdventureGo.data
 {
-    internal class MonsterData
+    class MonsterData
     {
         private Random random = new Random();
 

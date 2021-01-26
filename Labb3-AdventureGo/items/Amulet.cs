@@ -1,6 +1,6 @@
 ﻿namespace Labb3_AdventureGo.items
 {
-    internal class Amulet : BaseItem
+    class Amulet : BaseItem
     {
         private int toughnessBonus;
 

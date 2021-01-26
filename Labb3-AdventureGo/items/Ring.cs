@@ -1,6 +1,6 @@
 ﻿namespace Labb3_AdventureGo.items
 {
-    internal class Ring : BaseItem
+    class Ring : BaseItem
     {
         private int strengthBonus;
 

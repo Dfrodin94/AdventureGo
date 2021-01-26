@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Labb3_AdventureGo
 {
-    internal static class Game
+    static class Game
     {
         public static void GameHeader()
         {

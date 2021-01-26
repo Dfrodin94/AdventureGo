@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Labb3_AdventureGo
 {
-    internal class Shop
+    class Shop
     {
         public void BuyItems(Player player)
         {

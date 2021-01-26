@@ -2,7 +2,7 @@
 
 namespace Labb3_AdventureGo.monsters
 {
-    internal class SpecificMonster : Monster
+    class SpecificMonster : Monster
     {
         public SpecificMonster()
         {

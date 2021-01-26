@@ -4,7 +4,7 @@ using System;
 
 namespace Labb3_AdventureGo
 {
-    internal class Player : IBattleMechanics
+    class Player : IBattleMechanics
     {
         private string name;
         private int lvl;

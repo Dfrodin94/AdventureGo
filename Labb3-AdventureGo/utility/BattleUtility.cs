@@ -3,7 +3,7 @@ using System;
 
 namespace Labb3_AdventureGo.utility
 {
-    internal static class BattleUtility
+    static class BattleUtility
     {
         public static bool AdventureChance()
         {

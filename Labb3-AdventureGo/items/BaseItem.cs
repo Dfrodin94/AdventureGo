@@ -1,6 +1,6 @@
 ﻿namespace Labb3_AdventureGo.items
 {
-    internal abstract class BaseItem
+    abstract class BaseItem
     {
         private string name;
         private int cost;

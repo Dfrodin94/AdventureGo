@@ -3,7 +3,7 @@ using System;
 
 namespace Labb3_AdventureGo.monsters
 {
-    internal abstract class Monster : IBattleMechanics
+    abstract class Monster : IBattleMechanics
     {
         private string name;
         private int exp;
