@@ -1,57 +1,87 @@
-﻿using Labb3_AdventureGo.monsters;
+﻿using Labb3_AdventureGo.items;
 using Labb3_AdventureGo.utility;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Labb3_AdventureGo
 {
-    class Player : IGameMechanics
+    internal class Player : IBattleMechanics
     {
-
         private string name;
         private int lvl;
         private int exp;
         private int hp;
-        private int dmg;
+        private int strength;
+        private int toughness;
+        private int gold;
 
         public Player()
         {
-
         }
 
-        public Player(string name, int lvl, int exp, int hp, int dmg)
+        public Player(string name, int lvl, int exp, int hp, int strength, int toughness, int gold)
         {
             this.name = name;
             this.lvl = lvl;
             this.exp = exp;
             this.hp = hp;
-            this.dmg = dmg;
+            this.strength = strength;
+            this.Toughness = toughness;
+            this.gold = gold;
         }
 
-        public void LvlUp ()
+        public void LvlUp()
         {
             if (exp >= 200)
             {
-                int tempExp = exp;
+                int tempExp = exp; // kika lite mer på denna sedan.
                 tempExp -= 200;
 
                 Exp = tempExp;
                 Lvl += 1;
-                Hp += 20;
+                Hp = 200;
                 Dmg += 3;
             }
+        } //KIKA på DENNA!
 
-
-        }
-
-        public void Attack(Player p, SpecificMonster s)
+        public int Attack()
         {
-            s.Hp -= p.dmg;
+            Random rndm = new Random();
 
+            int attack = rndm.Next(5, strength);
+            return attack;
         }
 
-        public bool IsDead ()
+        public int TakeDmg(int dmg)
+        {
+            dmg -= toughness;
+
+            if (dmg <= 0)
+            {
+                dmg = 0;
+            }
+
+            hp -= dmg;
+
+            return dmg;
+        }
+
+        public void WearItem(BaseItem item)
+        {
+            if (item.Type == "ring")
+            {
+                int strength = item.getBonus();
+                this.strength += strength;
+            }
+            else
+            {
+                int toughness = item.getBonus();
+                this.toughness += toughness;
+
+                // wear amulet
+            }
+        }
+
+        public bool IsDead()
         {
             if (hp <= 0)
             {
@@ -63,17 +93,31 @@ namespace Labb3_AdventureGo
             }
         }
 
+        public void ShowStats()
+        {
+            Console.WriteLine("********");
+            Console.WriteLine($"* Name: {name}");
+            Console.WriteLine($"* Level: {lvl}");
+            Console.WriteLine($"* Hp: {hp}/200");
+            Console.WriteLine($"* Exp: {exp}/200");
+            Console.WriteLine($"* Gold: {gold}");
+            Console.WriteLine($"* Strength: {strength}");
+            Console.WriteLine($"* Toughness: {Toughness}");
+            Console.WriteLine("******** \n");
+        }
 
         public string Name { get => name; set => name = value; }
         public int Lvl { get => lvl; set => lvl = value; }
+
         public int Exp
         {
             get { return exp; }
             set { exp = value; }
         }
+
         public int Hp { get => hp; set => hp = value; }
-        public int Dmg { get => dmg; set => dmg = value; }
-
-
+        public int Dmg { get => strength; set => strength = value; }
+        public int Gold { get => gold; set => gold = value; }
+        public int Toughness { get => toughness; set => toughness = value; }
     }
 }

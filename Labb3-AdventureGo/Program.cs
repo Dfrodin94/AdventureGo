@@ -1,13 +1,10 @@
-﻿using System;
-
-namespace Labb3_AdventureGo
+﻿namespace Labb3_AdventureGo
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Meny.GameMeny();
-
+            Game.GameMeny();
         }
     }
 }
