@@ -11,13 +11,13 @@ namespace Labb3_AdventureGo.data
 
         public List<SpecificMonster> GetMonsters()
         {
-            List<SpecificMonster> monsterList = new List<SpecificMonster>(); // går att göra egna klasser av varje monster, gör det nog mot slutet #lat
+            List<SpecificMonster> monsterList = new List<SpecificMonster>(); // hade gått att göra egna klasser av varje monster
 
             monsterList.Add(new SpecificMonster("Devil", 100, 60, 10, 100));
             monsterList.Add(new SpecificMonster("Worm", 20, 30, 4, 100));
             monsterList.Add(new SpecificMonster("Imp", 50, 20, 8, 100));
             monsterList.Add(new SpecificMonster("Demonic Fire", 5, 10, 12, 100));
-            monsterList.Add(new SpecificMonster("spirit", 7, 15, 10, 100));
+            monsterList.Add(new SpecificMonster("Spirit", 7, 15, 10, 100));
 
             return monsterList;
         }

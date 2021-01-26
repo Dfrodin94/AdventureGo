@@ -23,13 +23,13 @@ namespace Labb3_AdventureGo
             input = Console.ReadLine();
 
             int inputInt = Int32.Parse(input);
-            inputInt = - -1;
+            inputInt -= 1;
 
             if (ItemExist(inputInt, shopList))
             {
                 if (player.Gold >= shopList[inputInt].Cost)
                 {
-                    Console.WriteLine("You brought the item!");
+                    Console.WriteLine($"You brought the item {shopList[inputInt].Name}!");
 
                     player.Gold -= shopList[inputInt].Cost;
                     player.WearItem(shopList[inputInt]);
@@ -39,6 +39,9 @@ namespace Labb3_AdventureGo
                     Console.WriteLine("Brush, you dont have enough $$$$");
                 }
             }
+
+            Console.WriteLine("[Press enter to continue]");
+            Console.ReadLine();
         }
 
         public void ShowItems(List<BaseItem> items)
@@ -57,7 +60,12 @@ namespace Labb3_AdventureGo
 
         public bool ItemExist(int indexItem, List<BaseItem> itemList)
         {
-            if (indexItem > itemList.Count())
+            if (indexItem >= itemList.Count())
+            {
+                Console.WriteLine("This item does not exist, please try again \n");
+                return false;
+            }
+            else if (indexItem < 0)
             {
                 Console.WriteLine("This item does not exist, please try again \n");
                 return false;

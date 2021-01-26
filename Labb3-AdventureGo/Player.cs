@@ -33,15 +33,17 @@ namespace Labb3_AdventureGo
         {
             if (exp >= 200)
             {
-                int tempExp = exp; // kika lite mer på denna sedan.
+                int tempExp = exp;
                 tempExp -= 200;
 
                 Exp = tempExp;
                 Lvl += 1;
                 Hp = 200;
                 Dmg += 3;
+
+                // hade gått att göra en metod i klassen BattleUtility som lvl:ar upp monster här och sänker exp etc. 
             }
-        } //KIKA på DENNA!
+        }
 
         public int Attack()
         {
@@ -104,17 +106,14 @@ namespace Labb3_AdventureGo
             Console.WriteLine($"* Strength: {strength}");
             Console.WriteLine($"* Toughness: {Toughness}");
             Console.WriteLine("******** \n");
+
+            Console.WriteLine("[Press enter to continue]");
+            Console.ReadLine();
         }
 
         public string Name { get => name; set => name = value; }
         public int Lvl { get => lvl; set => lvl = value; }
-
-        public int Exp
-        {
-            get { return exp; }
-            set { exp = value; }
-        }
-
+        public int Exp { get => exp; set => exp = value; }
         public int Hp { get => hp; set => hp = value; }
         public int Dmg { get => strength; set => strength = value; }
         public int Gold { get => gold; set => gold = value; }

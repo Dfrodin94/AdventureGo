@@ -5,7 +5,7 @@ namespace Labb3_AdventureGo.utility
 {
     internal static class BattleUtility
     {
-        public static bool AdventureChance() // klar och fin!
+        public static bool AdventureChance()
         {
             Random random = new Random();
 
@@ -35,8 +35,6 @@ namespace Labb3_AdventureGo.utility
                 Console.WriteLine("Uuoooah *slurp*");
                 Console.WriteLine($"The monster hits you, dealing {player.TakeDmg(monster.Attack())} damage");
 
-                // player.Attack(player, monster);
-                //monster.Attack(player, monster);
                 keepGoing = BattleWinner(player, monster, keepGoing);
 
                 if (keepGoing)
@@ -65,26 +63,14 @@ namespace Labb3_AdventureGo.utility
             }
 
             return keepGoing;
-        } //klar och fin och så!
+        }
 
-        public static void GetExpGold(Player player, SpecificMonster monster) // klar och fin och så!
+        public static void GetExpGold(Player player, SpecificMonster monster)
         {
             player.Exp += monster.Exp;
             player.Gold += monster.Gold;
             player.LvlUp();
             Console.WriteLine($"You are level {player.Lvl}, and you have {player.Exp} exp and {player.Hp} hp, and {player.Gold} gold");
-        }
-
-        public static int RealDmg(Player player, SpecificMonster monster) // FIXA, gör ATTACK och TAKEDMG metoder istället
-        {
-            int realDmg = monster.Dmg - player.Toughness;
-
-            if (realDmg <= 0)
-            {
-                realDmg = 0;
-            }
-
-            return realDmg;
         }
     }
 }

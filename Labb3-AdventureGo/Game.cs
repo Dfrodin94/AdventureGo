@@ -30,7 +30,14 @@ namespace Labb3_AdventureGo
 
             Console.Write("Enter your name: ");
             String playerName = Console.ReadLine();
+
             Player player = new Player(playerName, 1, 0, 200, 10, 5, 0);
+
+            if (playerName == "god")
+            {
+                player = new Player("god", 1, 0, 200, 500, 500, 500);
+                Console.WriteLine("GOD MODE ACTIVATED");
+            }
 
             MonsterData data = new MonsterData();
             List<SpecificMonster> monsterList = data.GetMonsters();
@@ -78,7 +85,6 @@ namespace Labb3_AdventureGo
 
         public static bool WinOrLoose(Player p, bool keepGoing)
         {
-           
             if (p.IsDead())
             {
                 Console.WriteLine("You were killed by the monster :(");
