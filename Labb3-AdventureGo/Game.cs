@@ -21,7 +21,7 @@ namespace Labb3_AdventureGo
 
         public static void GameMeny()
         {
-            ItemData shopData = new ItemData();
+            ItemFactory shopData = new ItemFactory();
             List<BaseItem> shopList = shopData.GetItems();
             Shop aShop = new Shop();
 
@@ -39,7 +39,7 @@ namespace Labb3_AdventureGo
                 Console.WriteLine("GOD MODE ACTIVATED");
             }
 
-            MonsterData data = new MonsterData();
+            MonsterFactory data = new MonsterFactory();
             List<SpecificMonster> monsterList = data.GetMonsters();
             SpecificMonster monster;
 

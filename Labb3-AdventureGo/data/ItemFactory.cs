@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Labb3_AdventureGo.data
 {
-    class ItemData
+    class ItemFactory
     {
         public List<BaseItem> GetItems()
         {

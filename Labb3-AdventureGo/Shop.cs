@@ -10,7 +10,7 @@ namespace Labb3_AdventureGo
     {
         public void BuyItems(Player player)
         {
-            ItemData shopData = new ItemData();
+            ItemFactory shopData = new ItemFactory();
             List<BaseItem> shopList = shopData.GetItems();
 
             ShowItems(shopList);
